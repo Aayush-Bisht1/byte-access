@@ -9,7 +9,7 @@ const router = express.Router();
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "/auth/youtube/callback"
+  callbackURL: "https://byte-access.vercel.app/auth/youtube/callback"
 }, (accessToken, refreshToken, profile, done) => {
   
   console.log('Google Strategy Callback');
@@ -23,7 +23,7 @@ passport.use(new GoogleStrategy({
 passport.use(new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: "/auth/github/callback"
+  callbackURL: "https://byte-access.vercel.app/auth/github/callback"
 }, (accessToken, refreshToken, profile, done) => {
   
   profile.accessToken = accessToken;
